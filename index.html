@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freddy Channel Music</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#101826;color:white}
+.container{max-width:900px;margin:auto;padding:20px}
+.header{text-align:center;margin-bottom:20px}
+.header h1{color:#00d8ff}
+.player{background:#1b2638;border-radius:15px;padding:20px}
+#currentSong{font-size:20px;margin-bottom:10px}
+audio{width:100%}
+.controls{display:flex;justify-content:center;gap:10px;margin-top:15px;flex-wrap:wrap}
+button{background:#00d8ff;border:none;border-radius:8px;padding:10px 18px;font-size:16px;cursor:pointer;font-weight:bold}
+.playlist{margin-top:20px;max-height:500px;overflow-y:auto}
+.song{padding:12px;margin:5px 0;border-radius:10px;background:#243248;cursor:pointer}
+.song:hover{background:#30445f}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🎵 Freddy Channel Music</h1>
+<p>Playlist Oficial • 30 Faixas</p>
+</div>
+<div class="player">
+<div id="currentSong">Selecione uma música</div>
+<audio id="audio" controls></audio>
+<div class="controls">
+<button onclick="prevSong()">⏮️ Anterior</button>
+<button onclick="togglePlay()">▶️ Play/Pause</button>
+<button onclick="nextSong()">⏭️ Próxima</button>
+</div>
+<div class="playlist" id="playlist"></div>
+</div>
+</div>
+<script>
+const songs=[
+{
+title:"🌍 Planeta Furry",
+file:"https://raw.githubusercontent.com/FreddyChannel/freddy-channel-music/main/music/Planeta%20Furry.mp3"
+}
+];
+title:"⭐ O Grande Sonho",
+file:"https://raw.githubusercontent.com/FreddyChannel/freddy-channel-music/main/music/1.%20O%20Grande%20Sonho.mp3"
+}
+];
+["🐰 Missão Páscoa Pixelada","1EwdqNj8viDf-vPyw_vgtEmioZT4gFwiF"],
+["🏆 Jogo Mundial","1YhhbWHjVQb3seCr5fyrEbLEjCm8D54rS"],
+["🎉 Meu Dia Animado","1HEJNZ-c2-mJSF-mUBQVhHn2RKGcD71xV"],
+["🌕 Luar da Caçada","1pCZ3UDWuPk56O_Qbl01EKrGMikO3nAE3"],
+["❄️ Temporada de Inverno","1xKoNtEWdhBXvSqLeLhxM87QQfraCQHby"],
+["⛅ Novo Amanhecer do Freddy","1lmqOjYjr8GRuc1kiukPvlQtNUeKqLpNK"],
+["🏖️ Patas para Cima","1_X3QSvdf9LA5vcKfpB1NTBN6IrTIg9l4"],
+["🚀 Profissões do Amanhã","1AXzIL-dBk4C4nGF5mcoy3ahj6Bac4Mfl"],
+["🔥 Chamas de São João","1c0MDrNCGqeXgggWx_v3LYTAvdz5AkxPa"],
+["💻 Universo Digital","1o_SVqhPrV2k9-btwEgy4jq-jA-sYMF5f"],
+["🦸 Aventura de Herói","130sJ78sh_Yl_HIc-3Un16wfmBTpL7onp"],
+["🎭 Carnaval sem Fim","1EuQriTFQ4MnBSSYj_RtfpIHbgk0cIcT-"],
+["☁️ Turismo no Céu","13AThfBnsjKWaB5lr0rKSPkZ6M4MLp7i0"],
+["🎨 Aprender e Colorir","1jKAwsOlgCKTuqvmuoQVfhuHSr_XEWsRP"],
+["📸 Pequenas Memórias","1D1dJdo-pOYj3rPWMHhLS3ZYWItQUzFTB"],
+["🛍️ Lugar Iluminado","1ZzFbH5jCUZw-feg8s6w2WSwi6bjCvaeS"],
+["🎤 Rap em Alta Velocidade","1eTKt-fgcvTfP4asgDLZaWHNbVHdbN19B"],
+["🏮 Festival Chinês","1g3Avfeuk8htmsbOUFuZ8xto8Qj18Qq9T"],
+["📖 Reino dos Sonhos","1K6-DDyBkzZuKvTDzDChFVlIHYMUINZjj"],
+["💰 Tesouro Dourado","1_Y6S1StGF-r4170wKySlktHOKVpoHM_C"],
+["🎭Andamento Cultural","1kNGqJaOngpvdDz2d8bW9nNwBxhHroPML"],
+["☀️ Corrida entre o Sol","1mZo2VZXTaMLbY4ZDd8FBgzz7eeS0yik1"],
+["🌳 Floresta das Estações","1cxWlwdxxYTQsqeN5mQjDIo_oYfvhDqkp"],
+["🌊 Aventura no Mar Azul","1ZkULTeYTo_0I_UPbX_QhWsUjVDuqw83Z"],
+["🥊 Espetáculo dos Gigantes","1qJr4kE-G0xTp8zdGEXKhA8L4c4PsG55j"],
+["▶️ Uma Viagem Reprodutiva","1kLUzZQFZBMTaWL795OzD9wTuUaCF3Vxg"],
+["💤 Diferentes Sonhos","1SfgD-TXxujA3mV4YnqocC9zbrrAQJfuM"],
+["👻 Cidade Fantasma","13W4QNUS1xDIYcy-bkvDGaETYjb6XRtUE"]
+].map(s=>({title:s[0],file:"https://drive.google.com/uc?export=download&id="+s[1]}));
+
+const audio=document.getElementById("audio");
+const playlist=document.getElementById("playlist");
+const currentSongText=document.getElementById("currentSong");
+let currentIndex=0;
+function loadSong(i){currentIndex=i;audio.src=songs[i].file;currentSongText.textContent=songs[i].title;}
+function nextSong(){currentIndex=(currentIndex+1)%songs.length;loadSong(currentIndex);audio.play();}
+function prevSong(){currentIndex=(currentIndex-1+songs.length)%songs.length;loadSong(currentIndex);audio.play();}
+function togglePlay(){audio.paused?audio.play():audio.pause();}
+audio.addEventListener("ended",nextSong);
+songs.forEach((song,index)=>{
+ const div=document.createElement("div");
+ div.className="song";
+ div.textContent=song.title;
+ div.onclick=()=>{loadSong(index);audio.play();};
+ playlist.appendChild(div);
+});
+loadSong(0);
+</script>
+</body>
+</html>
