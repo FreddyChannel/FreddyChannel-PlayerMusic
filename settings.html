@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freddy Channel - Settings</title>
+<title>Freddy Channel Settings</title>
 
 <style>
 body{
@@ -37,13 +37,17 @@ h1{
     margin-top:0;
 }
 
-input, select{
+select,input{
     width:100%;
     padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
     border:none;
     border-radius:8px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.option{
+    margin:10px 0;
 }
 
 button{
@@ -60,10 +64,6 @@ button:hover{
     opacity:0.9;
 }
 
-.option{
-    margin:10px 0;
-}
-
 .footer{
     text-align:center;
     color:#aaa;
@@ -72,7 +72,6 @@ button:hover{
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
@@ -80,7 +79,7 @@ button:hover{
 <h1>⚙️ Freddy Channel Settings</h1>
 
 <div class="card">
-<h2>👤 Create Account</h2>
+<h2>👤 Account</h2>
 
 <label>Username</label> <input type="text" placeholder="Enter your username">
 
@@ -97,7 +96,8 @@ button:hover{
 
 <select>
 <option>English</option>
-<option>Português (Brasil)</option>
+<option>Português (Portugal)</option>
+<option>Português (Brazil)</option>
 <option>Español</option>
 <option>Français</option>
 <option>Deutsch</option>
@@ -108,10 +108,9 @@ button:hover{
 <h2>🎨 Theme</h2>
 
 <select>
+<option selected>Blue Mode (Default)</option>
 <option>Dark Mode</option>
 <option>Light Mode</option>
-<option>Freddy Blue Theme</option>
-<option>Gaming Theme</option>
 </select>
 </div>
 
@@ -123,15 +122,11 @@ button:hover{
 </div>
 
 <div class="option">
-<input type="checkbox" checked> New Music Releases
+<input type="checkbox" checked> Channel Updates
 </div>
 
 <div class="option">
-<input type="checkbox"> Events & Updates
-</div>
-
-<div class="option">
-<input type="checkbox"> Community News
+<input type="checkbox" checked> Community News
 </div>
 
 </div>
@@ -144,15 +139,15 @@ button:hover{
 </div>
 
 <div class="option">
-<input type="checkbox"> Allow Friend Requests
+<input type="checkbox" checked> Enable Security Alerts
+</div>
+
+<div class="option">
+<input type="checkbox" checked> Allow Friend Requests
 </div>
 
 <div class="option">
 <input type="checkbox"> Share Activity Status
-</div>
-
-<div class="option">
-<input type="checkbox" checked> Enable Security Alerts
 </div>
 
 </div>
@@ -160,14 +155,13 @@ button:hover{
 <div class="card">
 <h2>ℹ️ About</h2>
 
-<p><strong>Website:</strong> Freddy Channel</p>
-<p><strong>Version:</strong> 1.0</p>
-<p><strong>Status:</strong> Online</p>
+<p>Freddy Channel</p>
+<p>© Copyright - 2026</p>
 
 </div>
 
 <div class="footer">
-© Freddy Channel
+Freddy Channel Settings
 </div>
 
 </div>
