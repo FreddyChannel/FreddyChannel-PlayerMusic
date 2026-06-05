@@ -37,45 +37,48 @@ button{background:#00d8ff;border:none;border-radius:8px;padding:10px 18px;font-s
 </div>
 </div>
 <script>
-const songs=[
+const songs = [
 {
 title:"🌍 Planeta Furry",
-file:"https://raw.githubusercontent.com/FreddyChannel/freddy-channel-music/main/music/Planeta%20Furry.mp3"
-}
-];
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/Planeta%20Furry.mp3"
+},
+{
 title:"⭐ O Grande Sonho",
-file:"https://raw.githubusercontent.com/FreddyChannel/freddy-channel-music/main/music/1.%20O%20Grande%20Sonho.mp3"
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/1.%20O%20Grande%20Sonho.mp3"
+},
+{
+title:"🐰 Missão Páscoa Pixelada",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/2.%20Miss%C3%A3o%20P%C3%A1scoa%20Pixelada.mp3"
+},
+{
+title:"🏆 Jogo Mundial",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/3.%20Jogo%20Mundial.mp3"
+},
+{
+title:"🎉 Meu Dia Animado",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/4.%20Meu%20Dia%20Animado.mp3"
+},
+{
+title:"🌕 Luar da Caçada",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/5.%20Luar%20da%20Ca%C3%A7ada.mp3"
+},
+{
+title:"❄️ Temporada de Inverno",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/6.%20Temporada%20de%20Inverno.mp3"
+},
+{
+title:"⛅ Novo Amanhecer do Freddy",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/7.%20Novo%20Amanhecer%20do%20Freddy.mp3"
+},
+{
+title:"🏖️ Patas para Cima",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/8.%20Patas%20para%20Cima.mp3"
+},
+{
+title:"🚀 Profissões do Amanhã",
+file:"https://raw.githubusercontent.com/FreddyChannel/FreddyChannel-PlayerMusic/main/music/9.%20Profiss%C3%B5es%20do%20Amanh%C3%A3.mp3"
 }
 ];
-["🐰 Missão Páscoa Pixelada","1EwdqNj8viDf-vPyw_vgtEmioZT4gFwiF"],
-["🏆 Jogo Mundial","1YhhbWHjVQb3seCr5fyrEbLEjCm8D54rS"],
-["🎉 Meu Dia Animado","1HEJNZ-c2-mJSF-mUBQVhHn2RKGcD71xV"],
-["🌕 Luar da Caçada","1pCZ3UDWuPk56O_Qbl01EKrGMikO3nAE3"],
-["❄️ Temporada de Inverno","1xKoNtEWdhBXvSqLeLhxM87QQfraCQHby"],
-["⛅ Novo Amanhecer do Freddy","1lmqOjYjr8GRuc1kiukPvlQtNUeKqLpNK"],
-["🏖️ Patas para Cima","1_X3QSvdf9LA5vcKfpB1NTBN6IrTIg9l4"],
-["🚀 Profissões do Amanhã","1AXzIL-dBk4C4nGF5mcoy3ahj6Bac4Mfl"],
-["🔥 Chamas de São João","1c0MDrNCGqeXgggWx_v3LYTAvdz5AkxPa"],
-["💻 Universo Digital","1o_SVqhPrV2k9-btwEgy4jq-jA-sYMF5f"],
-["🦸 Aventura de Herói","130sJ78sh_Yl_HIc-3Un16wfmBTpL7onp"],
-["🎭 Carnaval sem Fim","1EuQriTFQ4MnBSSYj_RtfpIHbgk0cIcT-"],
-["☁️ Turismo no Céu","13AThfBnsjKWaB5lr0rKSPkZ6M4MLp7i0"],
-["🎨 Aprender e Colorir","1jKAwsOlgCKTuqvmuoQVfhuHSr_XEWsRP"],
-["📸 Pequenas Memórias","1D1dJdo-pOYj3rPWMHhLS3ZYWItQUzFTB"],
-["🛍️ Lugar Iluminado","1ZzFbH5jCUZw-feg8s6w2WSwi6bjCvaeS"],
-["🎤 Rap em Alta Velocidade","1eTKt-fgcvTfP4asgDLZaWHNbVHdbN19B"],
-["🏮 Festival Chinês","1g3Avfeuk8htmsbOUFuZ8xto8Qj18Qq9T"],
-["📖 Reino dos Sonhos","1K6-DDyBkzZuKvTDzDChFVlIHYMUINZjj"],
-["💰 Tesouro Dourado","1_Y6S1StGF-r4170wKySlktHOKVpoHM_C"],
-["🎭Andamento Cultural","1kNGqJaOngpvdDz2d8bW9nNwBxhHroPML"],
-["☀️ Corrida entre o Sol","1mZo2VZXTaMLbY4ZDd8FBgzz7eeS0yik1"],
-["🌳 Floresta das Estações","1cxWlwdxxYTQsqeN5mQjDIo_oYfvhDqkp"],
-["🌊 Aventura no Mar Azul","1ZkULTeYTo_0I_UPbX_QhWsUjVDuqw83Z"],
-["🥊 Espetáculo dos Gigantes","1qJr4kE-G0xTp8zdGEXKhA8L4c4PsG55j"],
-["▶️ Uma Viagem Reprodutiva","1kLUzZQFZBMTaWL795OzD9wTuUaCF3Vxg"],
-["💤 Diferentes Sonhos","1SfgD-TXxujA3mV4YnqocC9zbrrAQJfuM"],
-["👻 Cidade Fantasma","13W4QNUS1xDIYcy-bkvDGaETYjb6XRtUE"]
-].map(s=>({title:s[0],file:"https://drive.google.com/uc?export=download&id="+s[1]}));
 
 const audio=document.getElementById("audio");
 const playlist=document.getElementById("playlist");
