@@ -36,7 +36,17 @@ button{background:#00d8ff;border:none;border-radius:8px;padding:10px 18px;font-s
 </div>
 <div class="player">
 <div id="currentSong">Selecione uma música</div>
-<audio id="audio" controls></audio>
+audio::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+audio::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+}
+
+audio::-moz-media-controls-play-button {
+    display: none !important;
+}
 <div class="controls">
 <button onclick="prevSong()">⏮️ PREVIOUS</button>
 <button onclick="togglePlay()">▶️ PLAY</button>
